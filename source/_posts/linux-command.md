@@ -80,4 +80,97 @@ sudo chown alice:dev file.txt
 
 # 创建新用户并设置密码
 sudo useradd 新用户名 && sudo passwd 新用户名
+
+# 修改用户名
+sudo usermod -l new_username old_username
+
+# 赋予用户管理员权限
+sudo usermod -aG sudo username
+
+# 锁定（密码字段前加 `!`）
+sudo usermod -L username
+
+# 解锁
+sudo usermod -U username
+
+# 查看磁盘使用情况
+df -h
+
+# 查看目录大小
+du -sh /home
+
+# 查看内存使用情况 MB
+free -m
+
+# 查看系统信息
+uname -a
+
+# 查看网络连接和端口占用
+netstat -tulnp
+
+# 复制文件到远程主机
+scp /local/path/file.txt user@remote-host:/remote/path/
+# 示例：
+scp ~/data.zip alice@192.168.1.100:/home/alice/backups/
+
+# 指定端口复制
+scp -P 2222 /local/file user@remote-host:/remote/path/
+
+# 指定密钥复制
+scp -i ~/.ssh/id_rsa /local/file user@remote-host:/remote/path/
+
+# 限制为 800 Kbps
+scp -l 800 /large-file.iso user@remote-host:/downloads/ 
+
+# 本地目录同步,源路径末尾的 / 表示同步目录内容（不包含目录自身），无 / 会同步整个目录。
+rsync -av /source/dir/ /backup/dir/
+
+# 压缩传输加速,-e "ssh -p 2222"：指定 SSH 端口
+rsync -avz -e "ssh -p 2222" /local/dir/ user@remote-host:/remote/dir/
+
+#断点续传，-P：显示进度，中断后可重新执行命令继续传输
+rsync -avP /source/large-file.iso user@remote-host:/target/
+
+# 打印第1列和第3列（默认空格分隔）
+awk '{print $1, $3}' file.txt
+
+# 指定冒号分隔符（如 /etc/passwd）
+awk -F':' '{print $1, $6}' /etc/passwd
+
+
+# 将 stdin 数据作为参数传递给指定命令
+command1 | xargs [选项] command2
+# 直接处理输入参数
+xargs [选项] command2 < input.txt
+# 每次传递 2 个参数给命令（例如批量创建目录）
+echo "dir1 dir2 dir3 dir4" | xargs -n 2 mkdir
+# 等效执行：mkdir dir1 dir2 && mkdir dir3 dir4
+
+
+# 压缩文件
+zip archive.zip file.txt
+
+# systemctl 管理系统服务 ,启动 Nginx 服务
+sudo systemctl start nginx
+
+#查看系统日志
+journalctl -u nginx
+
+# >：重定向输出（覆盖文件）
+echo "hello" > output.txt
+
+# >>：重定向输出（追加到文件）
+echo "world" >> output.txt
+
+# |：管道（传递前一个命令的输出）
+cat file.txt | grep "error"
+
+# &：后台运行程序
+python script.py &
+
+# &&：前一个命令成功后再执行下一个
+make && make install
+
+# 查看命令的帮助文档
+man [命令]
 ```

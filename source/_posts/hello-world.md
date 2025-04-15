@@ -2,7 +2,6 @@
 title: Hello World
 excerpt: "这是摘要"
 date: "2013/7/13 20:46:25"
-sticky: 10
 index_img: /img/banner.jpg
 banner_img: /img/banner.jpg
 tag: [hello world,test]

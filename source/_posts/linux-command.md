@@ -2,12 +2,11 @@
 title: Linux 常用指令
 excerpt: "Linux 常用指令"
 date: "2025/4/11 13:59:11"
-index_img: /img/banner.jpg
 tag: [Linux]
 categories: [Linux]
 ---
 
-```shell
+```bash
 #列出所有文件及详情
 ls -al 
  

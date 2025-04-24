@@ -2,8 +2,8 @@
 title: clickhouse要点
 excerpt: "clickhouse要点"
 date: "2025/4/24 11:22:11"
-tag: [Linux]
-categories: [Linux]
+tag: [clickhouse,列式数据库]
+categories: [clickhouse]
 ---
 
 ## docker compose部署

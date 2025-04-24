@@ -6,7 +6,7 @@ tag: [Linux]
 categories: [Linux]
 ---
 
-```bash
+```sh
 #列出所有文件及详情
 ls -al 
  

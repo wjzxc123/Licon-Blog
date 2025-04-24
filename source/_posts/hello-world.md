@@ -1,9 +1,9 @@
 ---
 title: Hello World
 excerpt: "这是摘要"
-date: "2013/7/13 20:46:25"
-index_img: /img/banner.jpg
-banner_img: /img/banner.jpg
+date: "2025/4/11 16:30:20"
+#index_img: /img/banner.jpg
+#banner_img: /img/banner.jpg
 tag: [hello world,test]
 categories: [test]
 ---

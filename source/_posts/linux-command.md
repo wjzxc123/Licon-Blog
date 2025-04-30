@@ -134,6 +134,9 @@ rsync -avP /source/large-file.iso user@remote-host:/target/
 # 打印第1列和第3列（默认空格分隔）
 awk '{print $1, $3}' file.txt
 
+# 从第二行开始打印第一列
+awk 'NR>1 {print $1}' file.txt
+
 # 指定冒号分隔符（如 /etc/passwd）
 awk -F':' '{print $1, $6}' /etc/passwd
 
@@ -173,4 +176,27 @@ make && make install
 
 # 查看命令的帮助文档
 man [命令]
+
+# 查看用户是否存在
+id [用户名]
+
+# 隐藏标准输出和标准错误
+#/dev/null：Linux 的“黑洞”设备，写入它的内容会被丢弃
+[指令] &>/dev/null
+
+#$? 保存上一条命令的退出码
+id root
+echo $?
+
+#搜索文件内容
+grep [选项] "搜索模式" 文件名
+
+# -i 忽略大小写
+grep -i "error" log.txt  # 匹配 Error、ERROR、error 等
+
+# -r 递归搜索
+grep -r "error" /path/to/dir
+
+# -E：使用扩展的正则表达式
+grep -E "error[0-9]+" log.txt
 ```

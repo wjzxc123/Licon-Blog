@@ -214,6 +214,14 @@ printenv     # 同上（更清晰的输出）
 # 显示当前用户名
 whoami
 
+# 将标准输出和错误输出重定向到文件
+# > output.log：将标准输出（stdout）重定向到 output.log
+# 2>&1：将标准错误（stderr）也重定向到 output.log
+# 最终效果：命令的所有输出（包括正常输出和错误信息）都会写入 output.log
+command > output.log 2>&1
+
+
+
 ```
 
 ```sh

@@ -8,16 +8,16 @@ categories: [python]
 
 #### 运算符
 ```python
-// '/'  除法（浮点数结果）
+# '/'  除法（浮点数结果）
 print(10/3) //3.3333333333333335
 
-// '//'  除法（整数结果）
+# '//'  除法（整数结果）
 print(10//3) //3
 
-// '%'  取余数
+# '%'  取余数
 print(10%3) //1
 
-// '**'  幂运算
+# '**'  幂运算
 print(10**3) //1000
 
 ```
@@ -112,5 +112,168 @@ try:
     raise MyCustomError("这是一个自定义错误")
 except MyCustomError as e:
     print(e)
+```
+
+#### 数据结构
+> 列表
+
+1. 添加元素：append()、extend()、insert()
+2. 删除元素：remove()、pop()、del
+3. 排序：sort()
+4. 反转：reverse()
+5. 切片：my_list[start:end]
+
+```python
+my_list = [1, "two", 3.0]
+
+mylist = [1,9,3,5,7,2,8,4,6]
+mylist.sort()
+```
+
+
+> 推导式
+
+[expression for item in iterable if condition]
+
+```python
+# 生成平方数列
+squares = [x**2 for x in range(5)]
+print(squares)  # 输出: [0, 1, 4, 9, 16]
+
+# 带条件筛选的列表推导式
+even_numbers = [x for x in range(10) if x % 2 == 0]
+print(even_numbers)  # 输出: [0, 2, 4, 6, 8]
+```
+
+> 字典
+
+1. 访问元素：my_dict[key]
+2. 添加/修改元素：my_dict[key] = value
+3. 删除元素：del my_dict[key]、pop()
+4. 遍历：for key in my_dict:、for key, value in my_dict.items():
+
+```python
+dict = {"name":"licon","age":18}
+print(dict["name"])
+
+del dict["name"] #删除字典的键位
+print(dict)
+
+for key in dict:
+    print(key)
+
+for key,value in dict.items():
+    print(key,value)
+```
+
+> 推导式
+
+{key_expr: value_expr for item in iterable if condition}
+
+```python
+# 创建字典：数字 -> 平方
+squares_dict = {x: x**2 for x in range(5)}
+print(squares_dict)  # 输出: {0: 0, 1: 1, 2: 4, 3: 9, 4: 16}
+
+# 筛选偶数键值对
+even_dict = {x: x**2 for x in range(10) if x % 2 == 0}
+print(even_dict)  # 输出: {0: 0, 2: 4, 4: 16, 6: 36, 8: 64}
+```
+
+
+> 元组
+
+1. 不可变，因此不能添加、删除或修改元素。
+2. 可以用作字典的键（如果其中的元素也是不可变的）。
+
+```python
+my_tuple = (1, "two", 3.0)
+print(my_tuple.count(1)) #  返回元素出现的次数
+print(my_tuple.index("two")) # 返回元素在元组中的索引
+```
+
+
+> 集合
+
+1. 添加元素：add()
+2. 删除元素：remove()、discard()
+3. 集合运算：union()、intersection()、difference()
+4. 检查成员：in
+
+```python
+set={1,2,2,3,3,5,6,7}
+set.union() # 返回并集
+print(set)
+
+set2={2,3,4}
+print(set.intersection())  # 返回交集
+```
+
+> 推导式
+
+{expression for item in iterable if condition}
+
+```python
+# 生成不重复的平方集合
+unique_squares = {x**2 for x in [1, -1, 2, -2, 3]}
+print(unique_squares)  # 输出: {1, 4, 9}
+
+# 筛选偶数的集合
+even_set = {x for x in range(10) if x % 2 == 0}
+print(even_set)  # 输出: {0, 2, 4, 6, 8}
+
+```
+
+
+> 生成器推导式
+
+(expression for item in iterable if condition)
+
+```python
+# 生成器表达式
+gen = (x**2 for x in range(5))
+print(gen)  # 输出: <generator object <genexpr> at 0x...>
+
+# 可以逐个取值
+for val in gen:
+    print(val)
+
+# 或者转为列表
+print(list((x**2 for x in range(5))))  # 输出: [0, 1, 4, 9, 16]
+
+```
+>  多层嵌套推导式
+
+[expression for item1 in iterable1 for item2 in iterable2 if condition]
+
+```python
+# 嵌套循环
+pairs = [(x, y) for x in [1, 2] for y in ['a', 'b']]
+print(pairs)  # 输出: [(1, 'a'), (1, 'b'), (2, 'a'), (2, 'b')]
+
+# 带条件的嵌套推导式
+filtered_pairs = [(x, y) for x in range(3) for y in range(3) if x != y]
+print(filtered_pairs)  # 输出: [(0, 1), (0, 2), (1, 0), (1, 2), (2, 0), (2, 1)]
+
+```
+
+> 迭代器（Iterator）
+
+迭代器是一个对象，实现了 __iter__() 和 __next__() 方法。
+当调用 next() 方法时，迭代器会返回下一个元素。
+当迭代器没有更多元素时，next() 方法会抛出 StopIteration 异常。
+
+```python
+#每次调用 next() 获取下一个元素。
+#所有元素存储在内存中。
+
+my_list = [1, 2, 3]
+it = iter(my_list)
+
+print(next(it))  # 输出 1
+print(next(it))  # 输出 2
+print(next(it))  # 输出 3
+# print(next(it))  # 抛出 StopIteration
+
 ```
 

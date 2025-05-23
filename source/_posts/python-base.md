@@ -277,3 +277,69 @@ print(next(it))  # 输出 3
 
 ```
 
+#### 类和对象
+
+```python
+
+#在 Python 中，self 是类中方法的第一个参数，它的作用是 指向调用该方法的实例本身。
+#这是 Python 的一种设计机制，用于实现面向对象编程（OOP）中的 封装性 和 多态性
+
+#如果没有 self，Python 无法知道这个函数是否属于某个类的实例。
+#self 帮助 Python 把函数绑定到类的实例上，变成“实例方法”。
+
+
+#在 Python 中，魔术方法（Magic Methods） 也称为 双下划线方法（Dunder Methods），
+#是 Python 提供的一类特殊方法，用于实现对象的内置行为，例如初始化、字符串表示、运算符重载、迭代等。
+#它们以双下划线 __ 开头和结尾，例如 __init__()、__str__()、__add__() 等。
+
+class User:
+    def __init__(self, name, age):  #构造函数
+        self.name = name
+        self.age = age
+
+    def  __str__(self):    # 返回对象的字符串表示
+        return f"User {self.name} is {self.age} years old."   #f 表示这是一个 f-string，是 Python 3.6+ 引入的新特性；
+                                                              #{self.name} 是一个占位符，运行时会被对象的 name 属性值替换。
+    
+    def  __eq__(self, other):  # 比较两个对象是否相等
+        return self.name == other.name and self.age == other.age
+        
+        
+#如果想把某些属性给隐藏起来，不想让外界直接访问，可以在属性名前面加两个下划线
+#可以添加set和get方法
+class User:
+    def __init__(self, name, age):  #构造函数
+        self.name = name
+        self.age = age
+        self.__secret = "This is a secret."
+    
+    def set(self,secret):
+        self.__secret = secret
+
+    def get(self):
+        return self.__secret
+
+user = User("licon",18)
+        
+#创建用于计算的属性
+#python中使用@property将一个方法转换为属性，从而实现用于计算的属性，
+#将方法转换为属性后，可以直接通过方法名来访问，而不需要加括号。
+
+class User:
+    def __init__(self,name,age):
+        self.name = name
+        self.age = age
+
+    @property
+    def func(self):
+        if self.age < 150 and self.age > 0:
+            print(self.age)
+        else:
+            print("想啥呢？")
+
+user = User("licon",18)
+user.func
+
+
+```
+

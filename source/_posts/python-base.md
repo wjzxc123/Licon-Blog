@@ -340,6 +340,59 @@ class User:
 user = User("licon",18)
 user.func
 
+#继承(实现)
+class User:
+    def __init__(self, name, age):  # 构造函数
+        self.name = name
+        self.age = age
+        self.__secret = "This is a secret."
+
+    def set(self, secret):
+        self.__secret = secret
+
+    def get(self):
+        return self.__secret
+
+    def __str__(self):
+        return "name: %s, age: %s" % (self.name, self.age)
+
+#创建子类
+class Licon(User):
+    pass
+
+licon = Licon("licon","18")
+print(licon)
+```
+
+### 常用包
+```python
+#时间操作包 datetime
+
+from datetime import datetime
+time=datetime.now()
+format=time.strftime("%Y-%m-%d %H:%M:%S")
+print(format)
+
+
+datestr="20220101"
+parse_date=datetime.strptime(datestr,"%Y%m%d")
+print(parse_date)
+
+
+#日期遍历
+from datetime import datetime,timedelta
+
+date=datetime.strptime("2025-01-01", "%Y-%m-%d")
+while date <= datetime.now():
+    print(date)
+    date+=timedelta(days=1)
+```
+
+### 常用一些操作
+```python
+#f-string,f 开头，包含的 {} 表达式在程序运行时会被表达式的值代替
+name="licon"
+print(f'hello {name}')
 
 ```
 

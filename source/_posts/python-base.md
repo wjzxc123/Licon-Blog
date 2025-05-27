@@ -6,7 +6,7 @@ tag: [python]
 categories: [python]
 ---
 
-#### 运算符
+### 运算符
 ```python
 # '/'  除法（浮点数结果）
 print(10/3) //3.3333333333333335
@@ -46,7 +46,7 @@ print(10**3) //1000
 
 :=：海象运算符（Python 3.8 引入），可以在表达式内部为变量赋值
 
-#### 流程控制
+### 流程控制
 ```python
 if condition:
     # 如果 condition 为 True，则执行这里的代码
@@ -77,7 +77,7 @@ for num in range(2, 10):
 
 ```
 
-#### 异常处理
+### 异常处理
 
 ```python
 try:
@@ -114,8 +114,8 @@ except MyCustomError as e:
     print(e)
 ```
 
-#### 数据结构
-> 列表
+### 数据结构
+#### 列表
 
 1. 添加元素：append()、extend()、insert()
 2. 删除元素：remove()、pop()、del
@@ -145,7 +145,7 @@ even_numbers = [x for x in range(10) if x % 2 == 0]
 print(even_numbers)  # 输出: [0, 2, 4, 6, 8]
 ```
 
-> 字典
+#### 字典
 
 1. 访问元素：my_dict[key]
 2. 添加/修改元素：my_dict[key] = value
@@ -181,7 +181,7 @@ print(even_dict)  # 输出: {0: 0, 2: 4, 4: 16, 6: 36, 8: 64}
 ```
 
 
-> 元组
+#### 元组
 
 1. 不可变，因此不能添加、删除或修改元素。
 2. 可以用作字典的键（如果其中的元素也是不可变的）。
@@ -193,7 +193,7 @@ print(my_tuple.index("two")) # 返回元素在元组中的索引
 ```
 
 
-> 集合
+#### 集合
 
 1. 添加元素：add()
 2. 删除元素：remove()、discard()
@@ -277,7 +277,7 @@ print(next(it))  # 输出 3
 
 ```
 
-#### 类和对象
+### 类和对象
 
 ```python
 

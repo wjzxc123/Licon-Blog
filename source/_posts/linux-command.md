@@ -231,6 +231,21 @@ command > output.log 2>&1
 #获取某个日期的前一天日期
 date -d "yesterday 20250521" +%Y%m%d
 
+#查询用户家目录
+#将 username 替换为目标用户名
+eval echo ~username  
+
+# 修改用户家目录
+# -d：指定新的家目录路径
+#-m：自动将原家目录内容移动到新位置
+#username：要修改的用户名
+usermod -d /newHomePath -m username
+
+# 添加用户到指定组
+usermod -a -G groupname username
+
+# 清空文件
+cat /dev/null > filename
 ```
 
 ```sh

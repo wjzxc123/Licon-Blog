@@ -230,6 +230,11 @@ else
     echo "File not found: $filename"
     exit 1
 fi
+
+#exit 终止当前脚本或函数的执行，并返回一个退出状态码给调用者（通常是 shell）
+#0 成功（Success）
+#1 一般错误（General error）
+#2 错误使用 shell 命令
 ```
 
 

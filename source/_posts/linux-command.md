@@ -59,6 +59,12 @@ cat > ~/cron_wrapper.sh <<'EOF'
 第一行内容
 第二行内容
 EOF  # 结束标记
+#注意当使用 'EOF' 时 如果下面指令需要执行，则无法生效
+#当使用 EOF 时，如果下面指令需要执行，可以生效  例如
+cat > ~/cron_wrapper.sh <<EOF
+$(date +"%Y-%m-%d %H:%M:%S")
+EOF
+
 
 # 显示文件前 10 行
 head -n 10 file.txt

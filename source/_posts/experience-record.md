@@ -120,7 +120,7 @@ SELECT ... WHERE non_indexed_col = 20
 >解决方案: 使用 REPAIR TABLE table_name; 修复表（通常 MyISAM 需要，InnoDB 有自愈能力）。
 
 ##### 如何诊断索引是否失效？
-1. XPLAIN 是神器: 在查询前加 EXPLAIN 或 EXPLAIN FORMAT=JSON 分析执行计划。
+1. EXPLAIN 是神器: 在查询前加 EXPLAIN 或 EXPLAIN FORMAT=JSON 分析执行计划。
 
 关键字段：
 

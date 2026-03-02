@@ -15,6 +15,7 @@ categories: [MCP,中间件]
 
 以RabbitMQ、RocketMQ、kafka为例：
 
+
 # RabbitMQ vs RocketMQ vs Kafka 对比
 
 | **特性**         | **RabbitMQ**      | **RocketMQ**              | **Kafka**                             |

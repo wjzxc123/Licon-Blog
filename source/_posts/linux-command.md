@@ -139,7 +139,7 @@ scp -l 800 /large-file.iso user@remote-host:/downloads/
 # 本地目录同步,源路径末尾的 / 表示同步目录内容（不包含目录自身），无 / 会同步整个目录。
 rsync -av /source/dir/ /backup/dir/
 
-# 压缩传输加速,-e "ssh -p 2222"：指定 SSH 端口
+# 压缩传输加速,-e "ssh -p 2222"：指定 SSH 端口 -z压缩
 rsync -avz -e "ssh -p 2222" /local/dir/ user@remote-host:/remote/dir/
 
 #断点续传，-P：显示进度，中断后可重新执行命令继续传输

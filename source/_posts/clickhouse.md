@@ -2,8 +2,8 @@
 title: clickhouse要点
 excerpt: "clickhouse要点"
 date: "2025/4/24 11:22:11"
-tag: [clickhouse,列式数据库]
-categories: [clickhouse]
+tag: [clickhouse,列式数据库,中间件]
+categories: [clickhouse,中间件]
 ---
 ## 介绍
 ClickHouse 是一个开源的、面向列的分布式分析数据库管理系统（DBMS），

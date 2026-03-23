@@ -2,8 +2,8 @@
 title: MCP的知识
 excerpt: "MCP的知识"
 date: 2025-06-04 13:53:01
-tag: [MCP]
-categories: [MCP]
+tag: [MCP,AI]
+categories: [MCP,AI]
 ---
 
 ## conda安装 uv包管理器 供MCP使用

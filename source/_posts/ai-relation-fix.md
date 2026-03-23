@@ -1,7 +1,7 @@
 ---
-title: ai-relation
+title: ai-relation(Ai修正版)
 excerpt: "从 Transformer 到 Agent，聊聊我对 AI 的一些理解"
-date: 2026-03-23 14:10:24
+date: 2026-3-23 17:08:28
 tag: [AI]
 categories: [AI]
 ---
